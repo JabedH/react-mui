@@ -5,6 +5,7 @@ import { Typography } from "@mui/material";
 import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed";
 import RightBar from "./components/RightBar";
+import NavBar from "./components/NavBar";
 
 function App() {
   const MyButton = styled(Button)({
@@ -20,6 +21,7 @@ function App() {
   });
   return (
     <Box>
+      <NavBar />
       <Stack direction="row" spacing={2} justifyContent="space-evenly">
         <Sidebar />
         <Feed />
