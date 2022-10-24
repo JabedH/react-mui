@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Button, styled } from "@mui/material";
+import { Add, Settings } from "@mui/icons-material";
+import { Typography } from "@mui/material";
+import Sidebar from "./components/Sidebar";
+import Feed from "./components/Feed";
+import RightBar from "./components/RightBar";
 
 function App() {
+  const MyButton = styled(Button)({
+    backgroundColor: "skyblue",
+    color: "#888",
+    margin: 5,
+    "&:hover": {
+      backgroundColor: "lightblue",
+    },
+    "&:disabled": {
+      backgroundColor: "gray",
+    },
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Sidebar />
+      <Feed />
+      <RightBar />
     </div>
   );
 }
