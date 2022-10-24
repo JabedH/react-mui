@@ -1,10 +1,17 @@
+import { Box } from "@mui/material";
 import React from "react";
 
 const Sidebar = () => {
   return (
-    <div>
-      <h1>this is slide bar</h1>
-    </div>
+    <Box
+      bgcolor="lightblue"
+      flex={1}
+      p={2}
+      textAlign="center"
+      sx={{ display: { xs: "none", sm: "block" } }}
+    >
+      Sidebar
+    </Box>
   );
 };
 

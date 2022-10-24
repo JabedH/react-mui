@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, styled } from "@mui/material";
+import { Box, Button, Stack, styled } from "@mui/material";
 import { Add, Settings } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import Sidebar from "./components/Sidebar";
@@ -19,11 +19,13 @@ function App() {
     },
   });
   return (
-    <div>
-      <Sidebar />
-      <Feed />
-      <RightBar />
-    </div>
+    <Box>
+      <Stack direction="row" spacing={2} justifyContent="space-evenly">
+        <Sidebar />
+        <Feed />
+        <RightBar />
+      </Stack>
+    </Box>
   );
 }
 
