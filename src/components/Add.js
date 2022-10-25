@@ -93,7 +93,7 @@ const Add = () => {
             aria-label="outlined primary button group"
           >
             <Button>Post</Button>
-            <Button SX={{ width: "100px" }}>
+            <Button sx={{ width: "100px" }}>
               <DateRange />
             </Button>
           </ButtonGroup>
