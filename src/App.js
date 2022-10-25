@@ -1,11 +1,12 @@
 import * as React from "react";
 import { Box, Button, Stack, styled } from "@mui/material";
-import { Add, Settings } from "@mui/icons-material";
+import { Settings } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed";
 import RightBar from "./components/RightBar";
 import NavBar from "./components/NavBar";
+import Add from "./components/Add";
 
 function App() {
   const MyButton = styled(Button)({
@@ -22,11 +23,12 @@ function App() {
   return (
     <Box>
       <NavBar />
-      <Stack direction="row" spacing={2} justifyContent="space-evenly">
+      <Stack direction="row" spacing={2} justifyContent="space-between">
         <Sidebar />
         <Feed />
         <RightBar />
       </Stack>
+      <Add />
     </Box>
   );
 }
