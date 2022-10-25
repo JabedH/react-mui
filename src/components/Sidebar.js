@@ -22,7 +22,7 @@ import {
 import React from "react";
 import Add from "./Add";
 
-const Sidebar = () => {
+const Sidebar = ({ mode, setModal }) => {
   return (
     <Box
       flex={1}
@@ -85,7 +85,9 @@ const Sidebar = () => {
               <ListItemIcon>
                 <LightMode />
               </ListItemIcon>
-              <Switch />
+              <Switch
+                onChange={(e) => setModal(mode === "light" ? "dark" : "light")}
+              />
             </ListItemButton>
           </ListItem>
         </List>

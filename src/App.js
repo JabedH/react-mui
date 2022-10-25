@@ -1,5 +1,12 @@
-import * as React from "react";
-import { Box, Button, Stack, styled } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Box,
+  Button,
+  createTheme,
+  Stack,
+  styled,
+  ThemeProvider,
+} from "@mui/material";
 import { Settings } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import Sidebar from "./components/Sidebar";
@@ -9,6 +16,7 @@ import NavBar from "./components/NavBar";
 import Add from "./components/Add";
 
 function App() {
+  const [mode, setModal] = useState("light");
   const MyButton = styled(Button)({
     backgroundColor: "skyblue",
     color: "#888",
@@ -20,16 +28,23 @@ function App() {
       backgroundColor: "gray",
     },
   });
+  const darkTheme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
   return (
-    <Box>
-      <NavBar />
-      <Stack direction="row" spacing={2} justifyContent="space-between">
-        <Sidebar />
-        <Feed />
-        <RightBar />
-      </Stack>
-      <Add />
-    </Box>
+    <ThemeProvider theme={darkTheme}>
+      <Box bgcolor={"background.default"} color={"text.primary"}>
+        <NavBar />
+        <Stack direction="row" spacing={2} justifyContent="space-between">
+          <Sidebar setModal={setModal} mode={mode} />
+          <Feed />
+          <RightBar />
+        </Stack>
+        <Add />
+      </Box>
+    </ThemeProvider>
   );
 }
 
