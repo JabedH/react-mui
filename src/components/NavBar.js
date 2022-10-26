@@ -12,19 +12,23 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import PetsIcon from "@mui/icons-material/Pets";
-import { Mail, Notifications } from "@mui/icons-material";
+import {
+  LinkedIn,
+  Mail,
+  Notifications,
+  SearchSharp,
+} from "@mui/icons-material";
 import { display } from "@mui/system";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
-  margin: 10,
 });
 const Search = styled("div")(({ theme }) => ({
-  backgroundColor: "white",
+  backgroundColor: "#EEF3F8",
   padding: "0 10px",
   borderRadius: theme.shape.borderRadius,
-  width: "40%",
+  width: "250px",
 }));
 const Icon = styled(Box)(({ theme }) => ({
   display: "none",
@@ -45,15 +49,24 @@ const UserBox = styled(Box)(({ theme }) => ({
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" sx={{ backgroundColor: "white", px: "35px" }}>
       <StyledToolbar>
-        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          nav bar
-        </Typography>
-        <PetsIcon sx={{ display: { xs: "block", sm: "none" } }} />
-        <Search>
-          <InputBase placeholder="search..." />
-        </Search>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "2px",
+          }}
+        >
+          <Typography sx={{ display: { xs: "none", sm: "block" } }}>
+            <LinkedIn sx={{ width: 46, height: 46, color: "#0A66C2" }} />
+          </Typography>
+          {/* <PetsIcon sx={{ display: { xs: "block", sm: "none" } }} /> */}
+          <Search sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <SearchSharp sx={{ color: "gray" }} />
+            <InputBase placeholder="search..." />
+          </Search>
+        </Box>
         <Icon>
           <Badge badgeContent={4} color="error">
             <Mail color="white" />

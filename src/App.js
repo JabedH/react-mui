@@ -37,7 +37,12 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <Box bgcolor={"background.default"} color={"text.primary"}>
         <NavBar />
-        <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Stack
+          sx={{ px: "30px" }}
+          direction="row"
+          spacing={2}
+          justifyContent="space-between"
+        >
           <Sidebar setModal={setModal} mode={mode} />
           <Feed />
           <RightBar />
