@@ -9,6 +9,8 @@ import {
   CardHeader,
   CardMedia,
   Checkbox,
+  Chip,
+  Divider,
   Fab,
   IconButton,
   Modal,
@@ -20,6 +22,7 @@ import {
 import React, { useState } from "react";
 import {
   Add as AddIcon,
+  ArrowDropDown,
   Article,
   DateRange,
   DateRangeSharp,
@@ -69,7 +72,7 @@ const Add = () => {
           <AddIcon />
         </Fab>
       </Tooltip> */}
-      <Card sx={{ margin: 5 }}>
+      <Card sx={{ mx: 5, boxShadow: 0, borderRadius: "10px" }}>
         <Card>
           <Box
             sx={{
@@ -90,7 +93,7 @@ const Add = () => {
                 sx={{
                   // backgroundColor: "#F3F2EF",
                   pr: "340px",
-                  py: "20px",
+                  py: "15px",
                   borderRadius: "40px",
                   ...commonStyles,
                   borderColor: "grey.500",
@@ -101,21 +104,40 @@ const Add = () => {
               >
                 <ButtonBase sx={{ pl: "15px" }}>Start a Post</ButtonBase>
               </Box>
-              <Box>
-                <Panorama />
-                <Typography>Photo</Typography>
-                <YouTube></YouTube>
-                <Typography>Video</Typography>
-                <DateRangeIcon />
-
-                <Typography>Audio event</Typography>
-                <Article/>
-                <Typography>Write atrial</Typography>
-              </Box>
             </ButtonBase>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "10px",
+              alignItems: "center",
+              justifyContent: "space-between",
+              p: "15px",
+              mx: "15px",
+            }}
+          >
+            <Box sx={{ display: "flex", gap: 1 }}>
+              <Panorama sx={{ color: "#378FE9" }} />
+              <Typography>Photo</Typography>
+            </Box>
+            <Box sx={{ display: "flex", gap: 1 }}>
+              <YouTube sx={{ color: "#5F9B41" }}></YouTube>
+              <Typography>Video</Typography>
+            </Box>
+            <Box sx={{ display: "flex", gap: 1 }}>
+              <DateRangeIcon sx={{ color: "#C37D16" }} />
+              <Typography>Audio event</Typography>
+            </Box>
+            <Box sx={{ display: "flex", gap: 1 }}>
+              <Article sx={{ color: "#E16745" }} />
+              <Typography>Write atrial</Typography>
+            </Box>
           </Box>
         </Card>
       </Card>
+      <Divider sx={{ mx: 5 }} textAlign="right">
+        <Typography>Sort by: Top</Typography> <ArrowDropDown />{" "}
+      </Divider>
       <StyleModal
         open={open}
         onClose={(e) => setOpen(false)}
