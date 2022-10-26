@@ -35,7 +35,7 @@ function App() {
   });
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box bgcolor={"background.default"} color={"text.primary"}>
+      <Box bgcolor={"#f3f2ef"} color={"text.primary"}>
         <NavBar />
         <Stack
           sx={{ px: "30px" }}

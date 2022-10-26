@@ -13,10 +13,18 @@ import {
 import React, { useState } from "react";
 import PetsIcon from "@mui/icons-material/Pets";
 import {
+  Apps,
+  ArrowDropDownSharp,
+  Campaign,
+  Home,
   LinkedIn,
   Mail,
   Notifications,
+  NotificationsSharp,
+  People,
   SearchSharp,
+  Textsms,
+  Work,
 } from "@mui/icons-material";
 import { display } from "@mui/system";
 
@@ -49,7 +57,11 @@ const UserBox = styled(Box)(({ theme }) => ({
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "white", px: "35px" }}>
+    <AppBar
+      elevation={0}
+      position="sticky"
+      sx={{ backgroundColor: "white", px: "35px" }}
+    >
       <StyledToolbar>
         <Box
           sx={{
@@ -67,27 +79,38 @@ const NavBar = () => {
             <InputBase placeholder="search..." />
           </Search>
         </Box>
-        <Icon>
-          <Badge badgeContent={4} color="error">
-            <Mail color="white" />
-          </Badge>
-          <Badge badgeContent={4} color="error">
-            <Notifications color="white" />
-          </Badge>
+        <Box sx={{ color: "gray" }}>
+          <Home></Home>
+          <Typography>Home</Typography>
+          <People />
+          <Typography>My Network</Typography>
+          <Work />
+          <Typography>Jobs</Typography>
+          <Textsms />
+          <Typography>Message</Typography>
+          <NotificationsSharp />
+          <Typography>Notifications</Typography>
           <Avatar
             onClick={(e) => setOpen(true)}
             sx={{ width: 30, height: 30 }}
             src="/static/images/avatar/2.jpg"
           />
-        </Icon>
-        <UserBox>
+          <Typography>Me</Typography>
+          <ArrowDropDownSharp />
+          <Apps />
+          <Typography>Work</Typography>
+          <ArrowDropDownSharp />
+          <Campaign />
+          <Typography>Advertise</Typography>
+        </Box>
+        {/* <UserBox>
           <Avatar
             onClick={(e) => setOpen(true)}
             sx={{ width: 30, height: 30 }}
             src="/static/images/avatar/2.jpg"
           />
           <Typography>John</Typography>
-        </UserBox>
+        </UserBox> */}
         <Menu
           id="demo-positioned-menu"
           aria-labelledby="demo-positioned-button"
