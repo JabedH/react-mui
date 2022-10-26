@@ -17,6 +17,7 @@ import {
   ArrowDropDownSharp,
   Campaign,
   Home,
+  HomeRounded,
   LinkedIn,
   Mail,
   Notifications,
@@ -74,7 +75,7 @@ const NavBar = () => {
           }}
         >
           <Typography sx={{ display: { xs: "none", sm: "block" } }}>
-            <LinkedIn sx={{ width: 46, height: 46, color: "#121212" }} />
+            <LinkedIn sx={{ width: 46, height: 46, color: "#0A66C2" }} />
           </Typography>
           {/* <PetsIcon sx={{ display: { xs: "block", sm: "none" } }} /> */}
           <Search sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -84,29 +85,29 @@ const NavBar = () => {
         </Box>
         <Box sx={{ display: "flex", gap: 4, color: "gray" }}>
           <Box sx={{ display: "grid", justifyItems: "center" }}>
-            <Home sx={{ width: 30, height: 30 }}></Home>
+            <HomeRounded sx={{ width: 28, height: 28 }} />
             <Typography sx={{ fontSize: 12 }}>Home</Typography>
           </Box>
           <Box sx={{ display: "grid", justifyItems: "center" }}>
-            <People sx={{ width: 30, height: 30 }} />
+            <People sx={{ width: 28, height: 28 }} />
             <Typography sx={{ fontSize: 12 }}>My Network</Typography>
           </Box>
           <Box sx={{ display: "grid", justifyItems: "center" }}>
-            <Work sx={{ width: 30, height: 30 }} />
+            <Work sx={{ width: 28, height: 28 }} />
             <Typography sx={{ fontSize: 12 }}>Jobs</Typography>
           </Box>
           <Box sx={{ display: "grid", justifyItems: "center" }}>
-            <Textsms sx={{ width: 30, height: 30 }} />
+            <Textsms sx={{ width: 28, height: 28 }} />
             <Typography sx={{ fontSize: 12 }}>Message</Typography>
           </Box>
           <Box sx={{ display: "grid", justifyItems: "center" }}>
-            <NotificationsSharp sx={{ width: 30, height: 30 }} />
+            <NotificationsSharp sx={{ width: 28, height: 28 }} />
             <Typography sx={{ fontSize: 12 }}>Notifications</Typography>
           </Box>
           <Box>
             <Avatar
               onClick={(e) => setOpen(true)}
-              sx={{ width: 30, height: 30  }}
+              sx={{ width: 28, height: 28 }}
               src="/static/images/avatar/2.jpg"
             />
             <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -115,16 +116,16 @@ const NavBar = () => {
             </Box>
           </Box>
           <Box sx={{ display: "grid", justifyItems: "center" }}>
-            <Apps sx={{ width: 30, height: 30 }} />
+            <Apps sx={{ width: 28, height: 28 }} />
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <Typography sx={{ fontSize: 12 }}>Work</Typography>
               <ArrowDropDownSharp />
             </Box>
           </Box>
-          <div>
-            <Campaign sx={{ width: 30, height: 30 }} />
+          <Box sx={{ display: "grid", justifyItems: "center" }}>
+            <Campaign sx={{ width: 28, height: 28 }} />
             <Typography sx={{ fontSize: 12 }}>Advertise</Typography>
-          </div>
+          </Box>
         </Box>
         {/* <UserBox>
           <Avatar
