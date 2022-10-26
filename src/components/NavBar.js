@@ -54,6 +54,9 @@ const UserBox = styled(Box)(({ theme }) => ({
     display: "none",
   },
 }));
+// const allText = styled(Box)(({theme})=>({
+//   fontSize: 12
+// })
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -71,7 +74,7 @@ const NavBar = () => {
           }}
         >
           <Typography sx={{ display: { xs: "none", sm: "block" } }}>
-            <LinkedIn sx={{ width: 46, height: 46, color: "#0A66C2" }} />
+            <LinkedIn sx={{ width: 46, height: 46, color: "#121212" }} />
           </Typography>
           {/* <PetsIcon sx={{ display: { xs: "block", sm: "none" } }} /> */}
           <Search sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -79,29 +82,49 @@ const NavBar = () => {
             <InputBase placeholder="search..." />
           </Search>
         </Box>
-        <Box sx={{ color: "gray" }}>
-          <Home></Home>
-          <Typography>Home</Typography>
-          <People />
-          <Typography>My Network</Typography>
-          <Work />
-          <Typography>Jobs</Typography>
-          <Textsms />
-          <Typography>Message</Typography>
-          <NotificationsSharp />
-          <Typography>Notifications</Typography>
-          <Avatar
-            onClick={(e) => setOpen(true)}
-            sx={{ width: 30, height: 30 }}
-            src="/static/images/avatar/2.jpg"
-          />
-          <Typography>Me</Typography>
-          <ArrowDropDownSharp />
-          <Apps />
-          <Typography>Work</Typography>
-          <ArrowDropDownSharp />
-          <Campaign />
-          <Typography>Advertise</Typography>
+        <Box sx={{ display: "flex", gap: 4, color: "gray" }}>
+          <Box sx={{ display: "grid", justifyItems: "center" }}>
+            <Home sx={{ width: 30, height: 30 }}></Home>
+            <Typography sx={{ fontSize: 12 }}>Home</Typography>
+          </Box>
+          <Box sx={{ display: "grid", justifyItems: "center" }}>
+            <People sx={{ width: 30, height: 30 }} />
+            <Typography sx={{ fontSize: 12 }}>My Network</Typography>
+          </Box>
+          <Box sx={{ display: "grid", justifyItems: "center" }}>
+            <Work sx={{ width: 30, height: 30 }} />
+            <Typography sx={{ fontSize: 12 }}>Jobs</Typography>
+          </Box>
+          <Box sx={{ display: "grid", justifyItems: "center" }}>
+            <Textsms sx={{ width: 30, height: 30 }} />
+            <Typography sx={{ fontSize: 12 }}>Message</Typography>
+          </Box>
+          <Box sx={{ display: "grid", justifyItems: "center" }}>
+            <NotificationsSharp sx={{ width: 30, height: 30 }} />
+            <Typography sx={{ fontSize: 12 }}>Notifications</Typography>
+          </Box>
+          <Box>
+            <Avatar
+              onClick={(e) => setOpen(true)}
+              sx={{ width: 30, height: 30  }}
+              src="/static/images/avatar/2.jpg"
+            />
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <Typography sx={{ fontSize: 12 }}>Me</Typography>
+              <ArrowDropDownSharp />
+            </Box>
+          </Box>
+          <Box sx={{ display: "grid", justifyItems: "center" }}>
+            <Apps sx={{ width: 30, height: 30 }} />
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <Typography sx={{ fontSize: 12 }}>Work</Typography>
+              <ArrowDropDownSharp />
+            </Box>
+          </Box>
+          <div>
+            <Campaign sx={{ width: 30, height: 30 }} />
+            <Typography sx={{ fontSize: 12 }}>Advertise</Typography>
+          </div>
         </Box>
         {/* <UserBox>
           <Avatar
