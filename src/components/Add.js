@@ -20,15 +20,20 @@ import {
 import React, { useState } from "react";
 import {
   Add as AddIcon,
+  Article,
   DateRange,
+  DateRangeSharp,
   EmojiEmotions,
   Favorite,
   FavoriteBorder,
   Image,
   MoreVert,
+  Panorama,
   PersonAdd,
   VideoCameraBack,
+  YouTube,
 } from "@mui/icons-material";
+import DateRangeIcon from "@mui/icons-material/DateRange";
 import { Box, Stack } from "@mui/system";
 
 const StyleModal = styled(Modal)({
@@ -76,6 +81,7 @@ const Add = () => {
             }}
           >
             <Avatar
+              sx={{ width: 50, height: 50 }}
               alt="Cindy Baker"
               src="https://placeimg.com/192/194/people"
             />
@@ -84,7 +90,7 @@ const Add = () => {
                 sx={{
                   // backgroundColor: "#F3F2EF",
                   pr: "340px",
-                  py: "15px",
+                  py: "20px",
                   borderRadius: "40px",
                   ...commonStyles,
                   borderColor: "grey.500",
@@ -94,6 +100,17 @@ const Add = () => {
                 }}
               >
                 <ButtonBase sx={{ pl: "15px" }}>Start a Post</ButtonBase>
+              </Box>
+              <Box>
+                <Panorama />
+                <Typography>Photo</Typography>
+                <YouTube></YouTube>
+                <Typography>Video</Typography>
+                <DateRangeIcon />
+
+                <Typography>Audio event</Typography>
+                <Article/>
+                <Typography>Write atrial</Typography>
               </Box>
             </ButtonBase>
           </Box>
