@@ -1,8 +1,16 @@
 import {
   Avatar,
   Button,
+  ButtonBase,
   ButtonGroup,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Checkbox,
   Fab,
+  IconButton,
   Modal,
   styled,
   TextField,
@@ -14,7 +22,10 @@ import {
   Add as AddIcon,
   DateRange,
   EmojiEmotions,
+  Favorite,
+  FavoriteBorder,
   Image,
+  MoreVert,
   PersonAdd,
   VideoCameraBack,
 } from "@mui/icons-material";
@@ -34,9 +45,13 @@ const UserBox = styled(Box)({
 
 const Add = () => {
   const [open, setOpen] = useState(false);
+  const commonStyles = {
+    bgcolor: "background.paper",
+    border: 1,
+  };
   return (
-    <>
-      <Tooltip
+    <Box>
+      {/* <Tooltip
         onClick={(e) => setOpen(true)}
         title="Delete"
         sx={{
@@ -48,7 +63,42 @@ const Add = () => {
         <Fab color="primary" aria-label="add">
           <AddIcon />
         </Fab>
-      </Tooltip>
+      </Tooltip> */}
+      <Card sx={{ margin: 5 }}>
+        <Card>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "10px",
+              alignItems: "center",
+              justifyContent: "center",
+              p: "15px",
+            }}
+          >
+            <Avatar
+              alt="Cindy Baker"
+              src="https://placeimg.com/192/194/people"
+            />
+            <ButtonBase sx={{ borderRadius: "40px" }}>
+              <Box
+                sx={{
+                  // backgroundColor: "#F3F2EF",
+                  pr: "340px",
+                  py: "15px",
+                  borderRadius: "40px",
+                  ...commonStyles,
+                  borderColor: "grey.500",
+                  "&:hover": {
+                    background: "#F3F2EF",
+                  },
+                }}
+              >
+                <ButtonBase sx={{ pl: "15px" }}>Start a Post</ButtonBase>
+              </Box>
+            </ButtonBase>
+          </Box>
+        </Card>
+      </Card>
       <StyleModal
         open={open}
         onClose={(e) => setOpen(false)}
@@ -99,7 +149,7 @@ const Add = () => {
           </ButtonGroup>
         </Box>
       </StyleModal>
-    </>
+    </Box>
   );
 };
 

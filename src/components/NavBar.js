@@ -37,7 +37,13 @@ const Search = styled("div")(({ theme }) => ({
   backgroundColor: "#EEF3F8",
   padding: "0 10px",
   borderRadius: theme.shape.borderRadius,
-  width: "250px",
+
+  [theme.breakpoints.up("sm")]: {
+    width: "200px",
+  },
+  [theme.breakpoints.up("lg")]: {
+    width: "250px",
+  },
 }));
 const Icon = styled(Box)(({ theme }) => ({
   display: "none",
@@ -64,26 +70,47 @@ const NavBar = () => {
     <AppBar
       elevation={0}
       position="sticky"
-      sx={{ backgroundColor: "white", px: "35px" }}
+      sx={{
+        backgroundColor: "white",
+        px: "35px",
+      }}
     >
       <StyledToolbar>
         <Box
           sx={{
             display: "flex",
+            gap: "5px",
             alignItems: "center",
-            gap: "2px",
+            justifyContent: "space-between",
           }}
         >
           <Typography sx={{ display: { xs: "none", sm: "block" } }}>
             <LinkedIn sx={{ width: 46, height: 46, color: "#0A66C2" }} />
           </Typography>
-          {/* <PetsIcon sx={{ display: { xs: "block", sm: "none" } }} /> */}
+          <Box sx={{ display: { xs: "block", lg: "none" } }}>
+            <Avatar
+              sx={{
+                width: 36,
+                height: 36,
+              }}
+              src="/static/images/avatar/2.jpg"
+            />
+          </Box>
           <Search sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <SearchSharp sx={{ color: "gray" }} />
             <InputBase placeholder="search..." />
           </Search>
+          <Box sx={{ display: { xs: "block", lg: "none" } }}>
+            <Textsms sx={{ color: "gray", width: 28, height: 28 }} />
+          </Box>
         </Box>
-        <Box sx={{ display: "flex", gap: 4, color: "gray" }}>
+        <Box
+          sx={{
+            display: { lg: "flex", xs: "none", sm: "block" },
+            gap: 4,
+            color: "gray",
+          }}
+        >
           <Box sx={{ display: "grid", justifyItems: "center" }}>
             <HomeRounded sx={{ width: 28, height: 28 }} />
             <Typography sx={{ fontSize: 12 }}>Home</Typography>

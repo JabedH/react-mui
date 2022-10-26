@@ -47,7 +47,6 @@ function App() {
           <Feed />
           <RightBar />
         </Stack>
-        <Add />
       </Box>
     </ThemeProvider>
   );
