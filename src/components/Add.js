@@ -13,6 +13,8 @@ import {
   Divider,
   Fab,
   IconButton,
+  ListItem,
+  ListItemText,
   Modal,
   styled,
   TextField,
@@ -72,7 +74,7 @@ const Add = () => {
           <AddIcon />
         </Fab>
       </Tooltip> */}
-      <Card sx={{ mx: 5, boxShadow: 0, borderRadius: "10px" }}>
+      <Card sx={{ boxShadow: 0, borderRadius: "10px" }}>
         <Card>
           <Box
             sx={{
@@ -84,14 +86,15 @@ const Add = () => {
             }}
           >
             <Avatar
-              sx={{ width: 50, height: 50 }}
+              sx={{ width: 45, height: 45 }}
               alt="Cindy Baker"
               src="https://placeimg.com/192/194/people"
             />
             <ButtonBase sx={{ borderRadius: "40px" }}>
               <Box
+                onClick={(e) => setOpen(true)}
                 sx={{
-                  // backgroundColor: "#F3F2EF",
+                  
                   pr: "340px",
                   py: "15px",
                   borderRadius: "40px",
@@ -135,9 +138,15 @@ const Add = () => {
           </Box>
         </Card>
       </Card>
-      <Divider sx={{ mx: 5 }} textAlign="right">
-        <Typography>Sort by: Top</Typography> <ArrowDropDown />{" "}
+      <Divider textAlign="right" sx={{ my: "5px" }}>
+        <Typography
+          sx={{ display: "flex", alignItems: "center", fontSize: "15px" }}
+        >
+          <Box sx={{ fontSize: "12px" }}>Sort by: </Box> Top
+          <ArrowDropDown />
+        </Typography>
       </Divider>
+
       <StyleModal
         open={open}
         onClose={(e) => setOpen(false)}
@@ -151,6 +160,7 @@ const Add = () => {
           color={"text.primary"}
           borderRadius={5}
           p={5}
+          mt={-5}
         >
           <Typography variant="h6" color="gray" textAlign="center">
             heLLO

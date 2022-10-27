@@ -40,7 +40,7 @@ function App() {
         <Stack
           sx={{ px: "30px" }}
           direction="row"
-          spacing={2}
+          spacing={1}
           justifyContent="space-between"
         >
           <Sidebar setModal={setModal} mode={mode} />

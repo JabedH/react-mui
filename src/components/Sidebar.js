@@ -25,10 +25,10 @@ import Add from "./Add";
 const Sidebar = ({ mode, setModal }) => {
   return (
     <Box
-      flex={1}
+      flex={1.7}
       p={2}
       textAlign="center"
-      sx={{ display: { xs: "none", sm: "block" } }}
+      sx={{ border: 1, display: { xs: "none", sm: "block" } }}
     >
       <Box sx={{ position: "fixed" }}>
         <List>

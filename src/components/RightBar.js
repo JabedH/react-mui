@@ -32,9 +32,10 @@ const RightBar = () => {
   return (
     <Box
       bgcolor=""
-      flex={2}
+  
+      flex={2.5}
       p={2}
-      sx={{ display: { xs: "none", sm: "block" } }}
+      sx={{border: 1, display: { xs: "none", sm: "block" } }}
     >
       <Box sx={{ position: "fixed", width: 300 }}>
         <Typography variant="h6" fontWeight={100}>
