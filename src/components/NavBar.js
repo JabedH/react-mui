@@ -28,6 +28,7 @@ import {
   Work,
 } from "@mui/icons-material";
 import { display } from "@mui/system";
+import img1 from "../asset/img/1.jpg";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -61,9 +62,7 @@ const UserBox = styled(Box)(({ theme }) => ({
     display: "none",
   },
 }));
-// const allText = styled(Box)(({theme})=>({
-//   fontSize: 12
-// })
+
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -93,7 +92,7 @@ const NavBar = () => {
                 width: 36,
                 height: 36,
               }}
-              src="/static/images/avatar/2.jpg"
+              src={img1}
             />
           </Box>
           <Search sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -135,7 +134,7 @@ const NavBar = () => {
             <Avatar
               onClick={(e) => setOpen(true)}
               sx={{ width: 28, height: 28 }}
-              src="/static/images/avatar/2.jpg"
+              src={img1}
             />
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <Typography sx={{ fontSize: 12 }}>Me</Typography>

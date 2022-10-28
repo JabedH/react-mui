@@ -5,7 +5,7 @@ import Post from "./Post";
 
 const Feed = () => {
   return (
-    <Box flex={4} p={1} sx={{ border: 1 }}>
+    <Box flex={4} p={1} sx={{ border: 0 }}>
       <Add />
       <Post />
       <Post />

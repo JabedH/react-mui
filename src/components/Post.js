@@ -6,6 +6,7 @@ import {
   FavoriteBorder,
   InsertCommentRounded,
   MoreVert,
+  Public,
   SendRounded,
   Share,
   ThumbUpOffAlt,
@@ -25,24 +26,38 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
+import img1 from "../asset/img/1.jpg";
 const Post = () => {
   return (
     <Card sx={{ my: "10px" }}>
       <CardHeader
-        avatar={<Avatar aria-label="recipe">R</Avatar>}
+        avatar={
+          <Avatar
+            sx={{ width: 52, height: 52, mr: "-7px" }}
+            alt="Cindy Baker"
+            src={img1}
+          />
+        }
         action={
           <IconButton aria-label="settings">
             <MoreVert />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={<h4>Jabed H Tusar</h4>}
+        subheader={
+          <>
+            <p>Web Developer</p>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <p>1 hr</p> <Public sx={{ width: "16px", ml: "5px" }} />
+            </Box>
+          </>
+        }
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          The adjective natural is a common word with a lot of meanings. It
+          describes anything that comes from nature, but it also means "inborn"
+          when you describe your basketball-star friend as a natural athlete.
         </Typography>
       </CardContent>
       <CardMedia
@@ -95,43 +110,6 @@ const Post = () => {
           <Typography sx={{ color: "gray", fontSize: "12px" }}>Send</Typography>
         </Button>
       </CardActions>
-
-      {/* <Card>
-        <CardHeader
-          avatar={<Avatar aria-label="recipe">R</Avatar>}
-          action={
-            <IconButton aria-label="settings">
-              <MoreVert />
-            </IconButton>
-          }
-          title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
-        />
-        <CardMedia
-          component="img"
-          height="20%"
-          image="https://images.unsplash.com/photo-1546587348-d12660c30c50?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bmF0dXJhbHxlbnwwfHwwfHw%3D&w=1000&q=80"
-          alt="Paella dish"
-        />
-        <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <Button aria-label="add to favorites">
-            <Checkbox
-              icon={<ThumbUpOffAlt />}
-              checkedIcon={<ThumbUpOffAlt sx={{ color: "red" }} />}
-            />
-          </Button>
-          <IconButton aria-label="share">
-            <Share />
-          </IconButton>
-        </CardActions>
-      </Card> */}
     </Card>
   );
 };

@@ -38,12 +38,13 @@ function App() {
       <Box bgcolor={"#f3f2ef"} color={"text.primary"}>
         <NavBar />
         <Stack
-          sx={{ px: "30px" }}
+          sx={{ px: "50px",  }}
           direction="row"
           spacing={1}
           justifyContent="space-between"
         >
           <Sidebar setModal={setModal} mode={mode} />
+
           <Feed />
           <RightBar />
         </Stack>

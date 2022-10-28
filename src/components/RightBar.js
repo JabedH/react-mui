@@ -1,7 +1,9 @@
+import { ExpandMore, KeyboardArrowRight, LinkedIn } from "@mui/icons-material";
 import {
   Avatar,
   AvatarGroup,
   Box,
+  Button,
   Divider,
   ImageList,
   ImageListItem,
@@ -13,7 +15,8 @@ import {
 } from "@mui/material";
 import { width } from "@mui/system";
 import React from "react";
-
+import img3 from "../asset/img/3.jpg";
+import img4 from "../asset/img/4.png";
 const RightBar = () => {
   const itemData = [
     {
@@ -32,141 +35,197 @@ const RightBar = () => {
   return (
     <Box
       bgcolor=""
-  
       flex={2.5}
-      p={2}
-      sx={{border: 1, display: { xs: "none", sm: "block" } }}
+      sx={{
+        maxWidth: 300,
+        display: { xs: "none", sm: "block" },
+      }}
     >
-      <Box sx={{ position: "fixed", width: 300 }}>
-        <Typography variant="h6" fontWeight={100}>
-          Online Friends
-        </Typography>
-        <Box my={2}>
-          <AvatarGroup max={6}>
+      <Box sx={{ position: "fixed" }}>
+        <Box
+          sx={{
+            p: "12px",
+            width: 300,
+            mt: 3,
+            border: 0,
+            borderRadius: "10px",
+            backgroundColor: "white",
+          }}
+        >
+          <Typography
+            sx={{ typography: "body1", fontSize: "16px" }}
+            fontWeight={100}
+          >
+            Add to your feed
+          </Typography>
+          <Box my={2} sx={{ display: "flex", gap: 2, my: "15px" }}>
             <Avatar
               alt="Remy Sharp"
               src="https://placeimg.com/192/192/people"
             />
-            <Avatar
-              alt="Travis Howard"
-              src="https://placeimg.com/192/193/people"
-            />
-            <Avatar
-              alt="Cindy Baker"
-              src="https://placeimg.com/192/194/people"
-            />
-            <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" />
-            <Avatar
-              alt="Agnes Walker"
-              src="https://placeimg.com/192/195/people"
-            />
-            <Avatar
-              alt="Trevor Henderson"
-              src="https://placeimg.com/196/192/people"
-            />
-            <Avatar
-              alt="Agnes Walker"
-              src="https://placeimg.com/192/197/people"
-            />
-          </AvatarGroup>
+            <Box>
+              <Typography sx={{ fontSize: "14px", typography: "subtitle2" }}>
+                Thompson Studios
+              </Typography>
+              <Typography sx={{ fontSize: "12px", color: "gray" }}>
+                Company • Information Technology and
+              </Typography>
+              <Button
+                sx={{
+                  border: 1,
+                  borderRadius: "20px",
+                  color: "gray",
+                  mt: "5px",
+                }}
+              >
+                <Typography
+                  sx={{
+                    px: "5px",
+
+                    fontSize: "14px",
+                  }}
+                >
+                  + Follow
+                </Typography>
+              </Button>
+            </Box>
+          </Box>
+          <Box my={2} sx={{ display: "flex", gap: 2, my: "15px" }}>
+            <Avatar alt="Remy Sharp" src={img4} />
+            <Box>
+              <Typography sx={{ fontSize: "14px", typography: "subtitle2" }}>
+                Thomas
+              </Typography>
+              <Typography sx={{ fontSize: "12px", color: "gray" }}>
+                Software Developer
+              </Typography>
+              <Button
+                sx={{
+                  border: 1,
+                  borderRadius: "20px",
+                  color: "gray",
+                  mt: "5px",
+                }}
+              >
+                <Typography
+                  sx={{
+                    px: "5px",
+
+                    fontSize: "14px",
+                  }}
+                >
+                  + Follow
+                </Typography>
+              </Button>
+            </Box>
+          </Box>
+          <Box my={2} sx={{ display: "flex", gap: 2, my: "15px" }}>
+            <Avatar alt="Remy Sharp" src={img3} />
+            <Box>
+              <Typography sx={{ fontSize: "14px", typography: "subtitle2" }}>
+                john cena
+              </Typography>
+              <Typography sx={{ fontSize: "12px", color: "gray" }}>
+                Front-End web developer
+              </Typography>
+              <Button
+                sx={{
+                  border: 1,
+                  borderRadius: "20px",
+                  color: "gray",
+                  mt: "5px",
+                }}
+              >
+                <Typography
+                  sx={{
+                    px: "5px",
+
+                    fontSize: "14px",
+                  }}
+                >
+                  + Follow
+                </Typography>
+              </Button>
+            </Box>
+          </Box>
+          <Box>
+            <Button sx={{ color: "gray", fontSize: "14px" }}>
+              <typography sx={{}}>View all recommendations </typography>
+              <KeyboardArrowRight />
+            </Button>
+          </Box>
         </Box>
-        <Typography mb={2} variant="h6" fontWeight={100}>
-          Latest Photos
-        </Typography>
-        <ImageList cols={3} rowHeight={100}>
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-        <Box>
-          <Typography mb={2} mt={2} variant="h6" fontWeight={100}>
-            Latest Conversation
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px",
+            mt: "20px",
+            color: "gray",
+          }}
+        >
+          <Typography sx={{ fontSize: "12px" }}>About </Typography>
+          <Typography sx={{ fontSize: "12px" }}>Accessibility </Typography>
+          <Typography sx={{ fontSize: "12px" }}>Help Center </Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "5px",
+
+            mt: "10px",
+            color: "gray",
+          }}
+        >
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Typography sx={{ fontSize: "12px" }}>Privacy & Terms</Typography>
+            <ExpandMore />
+          </Box>
+          <Typography sx={{ fontSize: "12px" }}>Ad Choices</Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px",
+            mt: "10px",
+            color: "gray",
+          }}
+        >
+          <Typography sx={{ fontSize: "12px" }}>Advertising</Typography>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Typography sx={{ fontSize: "12px" }}>Business Services</Typography>
+            <ExpandMore />
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "5px",
+
+            mt: "10px",
+            color: "gray",
+          }}
+        >
+          <Typography sx={{ fontSize: "12px" }}>
+            Get the LinkedIn app{" "}
           </Typography>
-          <List
-            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-          >
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                <Avatar
-                  alt="Remy Sharp"
-                  src="https://placeimg.com/192/197/people"
-                />
-              </ListItemAvatar>
-              <ListItemText
-                primary="Brunch this weekend?"
-                secondary={
-                  <React.Fragment>
-                    <Typography
-                      sx={{ display: "inline" }}
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    >
-                      Ali Connors
-                    </Typography>
-                    {" — I'll be in your neighborhood doing errands this…"}
-                  </React.Fragment>
-                }
-              />
-            </ListItem>
-            <Divider variant="inset" component="li" />
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                <Avatar
-                  alt="Travis Howard"
-                  src="https://placeimg.com/192/197/people"
-                />
-              </ListItemAvatar>
-              <ListItemText
-                primary="Summer BBQ"
-                secondary={
-                  <React.Fragment>
-                    <Typography
-                      sx={{ display: "inline" }}
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    >
-                      to Scott, Alex, Jennifer
-                    </Typography>
-                    {" — Wish I could come, but I'm out of town this…"}
-                  </React.Fragment>
-                }
-              />
-            </ListItem>
-            <Divider variant="inset" component="li" />
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                <Avatar
-                  alt="Cindy Baker"
-                  src="https://placeimg.com/192/197/people"
-                />
-              </ListItemAvatar>
-              <ListItemText
-                primary="Oui Oui"
-                secondary={
-                  <React.Fragment>
-                    <Typography
-                      sx={{ display: "inline" }}
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                    >
-                      Sandra Adams
-                    </Typography>
-                    {" — Do you have Paris recommendations? Have you ever…"}
-                  </React.Fragment>
-                }
-              />
-            </ListItem>
-          </List>
+          <Typography sx={{ fontSize: "12px" }}>More</Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "5px",
+            mt: "10px",
+          }}
+        >
+          <LinkedIn sx={{ color: "#0A66C2" }}></LinkedIn>
+          <Typography sx={{ fontSize: "12px" }}>
+            LinkedIn Corporation © 2022
+          </Typography>
         </Box>
       </Box>
     </Box>

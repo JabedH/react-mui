@@ -40,6 +40,7 @@ import {
 } from "@mui/icons-material";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import { Box, Stack } from "@mui/system";
+import img1 from "../asset/img/1.jpg";
 
 const StyleModal = styled(Modal)({
   display: "flex",
@@ -61,20 +62,7 @@ const Add = () => {
   };
   return (
     <Box>
-      {/* <Tooltip
-        onClick={(e) => setOpen(true)}
-        title="Delete"
-        sx={{
-          position: "fixed",
-          bottom: 20,
-          left: { xs: "calc(50% - 25PX)", md: 30 },
-        }}
-      >
-        <Fab color="primary" aria-label="add">
-          <AddIcon />
-        </Fab>
-      </Tooltip> */}
-      <Card sx={{ boxShadow: 0, borderRadius: "10px" }}>
+      <Card sx={{ boxShadow: 0, mt: 3, borderRadius: "10px" }}>
         <Card>
           <Box
             sx={{
@@ -88,16 +76,19 @@ const Add = () => {
             <Avatar
               sx={{ width: 45, height: 45 }}
               alt="Cindy Baker"
-              src="https://placeimg.com/192/194/people"
+              src={img1}
             />
-            <ButtonBase sx={{ borderRadius: "40px" }}>
+            <ButtonBase
+              sx={{ borderRadius: "40px", width: "100%", ml: "10px" }}
+            >
               <Box
                 onClick={(e) => setOpen(true)}
                 sx={{
-                  
-                  pr: "340px",
-                  py: "15px",
+                  width: "100%",
+                  py: "13px",
                   borderRadius: "40px",
+                  display: "flex",
+                  alignItems: "center",
                   ...commonStyles,
                   borderColor: "grey.500",
                   "&:hover": {
